@@ -4,7 +4,7 @@
 #include <memory>
 #include <chrono>
 #include <sddl.h>
-#include <C:\Users\betty\Desktop\idk\Detours-4.0.1\include\detours.h>
+#include <C:\path\here\detours.h>
 
 typedef LONG NTSTATUS;
 typedef NTSTATUS (NTAPI *pNtDuplicateToken)(
@@ -23,7 +23,7 @@ bool loggingDone = false;
 void LogTokenInformation(HANDLE TokenHandle) {
     if (loggingDone) return;
 
-    std::ofstream logFile("C:\\Users\\betty\\Desktop\\idk\\lol.txt", std::ios_base::app);
+    std::ofstream logFile("C:\\path\\here\\lol.txt", std::ios_base::app);
     if (!logFile.is_open()) return;
 
     auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
